@@ -34,9 +34,9 @@ td{
 #black-field{
    background-color: var(--color-back);
    color: var(--color-font);
-   padding: 3%;
+   padding: 2%;
    border-radius: 5px;
-   height: 50vh;
+   height: 60vh;
 };
 
 input[type="text"]{
