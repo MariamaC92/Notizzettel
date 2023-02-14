@@ -14,36 +14,26 @@
     <div id="logo"></div>
 
 
-    <section id="table-container">
-        <div id="black-field">
+     <section class="table-container">
+        <div id="black-field1" class ="black-field">
 
             <!--input field-->
-            <div id="table-head">
-                <form action="">
-                    <input type="text" placeholder="Neue Aufgabe">
-                    <button>Hinzufügen</button>
+             <div id="table-head">
+                <form id="form" action="">
+                    <input id="newToDo" type="text" placeholder="Neue Aufgabe">
+                    <button id="newToDoButton">Hinzufügen</button>
                 </form>
-            </div>
+            </div> 
 
-            <table>
+             <table id="table">
 
-                <tr class="toDo">  <!--JS:  insertRow(table)  is supposed to insert a tr-->
-                    
-                    <td id="newTask">Putzen</td>
-
-                    <td class="delete-icon">X
-                        <!--add delete-X-icon-->
-                        <!--add selector field-->
+                <tr class="exampleTask"> 
+                    <td class="example">z.B. Putzen</td>
+                    <td class="example">X
                     </td>
-
-                    <td class="edit">edit
-                        <!--add edit-pen-icon-->
-                        <!--add selector field-->
+                    <td class="example">edit
                     </td>
-
-                    <td class="done">done
-                        <!--add edit-pen-icon-->
-                        <!--add selector field-->
+                    <td class="example">done
                     </td>
                 </tr>
 
@@ -52,20 +42,31 @@
     </section>
 
 
+    <!-- %%%%%%%%%%% tHIS IS A DIFFERNT ATTEMPT USING A DIV INSTEAD OF A TABLE!!!!-->
+    <section class="table-container">
+    <div id="black-field2" class ="black-field">
 
-    
+            <div id="table-head2">
+                <form id="form2" action="">
+                    <input id="newTask2" type="text" placeholder="Neue Aufgabe">
+                    <button id="newToDoButton2">Hinzufügen</button>
+                </form>
+            </div>
 
-    <!-- <div>
-        <div class="toDo2">
-            <div class="row">neue Aufgabe</div>
-            <img src="" alt="delete_icon">
-            <img src="" alt="edit_icon">
-            <img src="" alt="done_icon">
-        </div>
-    </div> -->
+            <div class="exampleTask">
+                <div class="example">z.B. Einkaufen</div>
+                <div class="example">X</div>
+                <div class="example">edit</div>
+                <div class="example">check</div>
+            </div>
+
+            
+
+    </div>
+</section>
     <!--JS:  createElement(toDo2)-->
 
-
+    <script src="./src/index.js"></script>
 </body>
 
 </html>
