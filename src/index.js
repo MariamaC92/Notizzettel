@@ -1,7 +1,7 @@
 
 let addNewToDo = function(event){
     event.preventDefault();
-    let task = document.getElementById("newToDo");
+    let task = document.getElementById("task");
     let table = document.getElementById("table");
     let row = table.insertRow(1);
     let cell1 = row.insertCell(0);
