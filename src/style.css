@@ -5,25 +5,40 @@ list-style: none;
 }
 
 :root {
-    --color-back: black;
+    --color-back: #181818;
     --color-font: white;
+}
+
+body {
+    background-image: url(https://source.unsplash.com/random/?minimalism);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo {
+    padding: 8px 16px 8px 16px;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: var(--color-back);
+    border-radius: 5px;
+    margin:16px
 }
 
 .table-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 
-.black-field{
+.black-field {
     background-color: var(--color-back);
     color: var(--color-font);
     padding: 2%;
     border-radius: 5px;
-    height: 60vh;
     width: 250px;
+    min-height: 250px;
  }
 
 table {
@@ -33,11 +48,12 @@ table {
     padding: 3%;
 }
 
-td{
+td {
     vertical-align: top;
     border-bottom: 1px solid var(--color-font);
-    padding: padding: 5% 0% 5% 0%;
+    padding: 5% 0% 5% 0%;
 }
+
 
 input[type="text"]{
     background: var(--color-back);
@@ -46,17 +62,21 @@ input[type="text"]{
 }
 
 .exampleTask{
-  display: grid;
-  grid-template-columns: 5fr 1fr 1fr 1fr;
-  padding: 5% 0% 5% 0%;
-  font-size: 0.9em;
-  opacity: 0.5;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    padding: 5% 0% 5% 0%;
+    font-size: 0.9em;
 }
 
 .example {
     color: var(--color-font);
     font-size: 0.8em;
-    opacity: 0.5;
+    padding-top: 2em ;
+}
+
+.example i {
+    font-size: 1.6em;
+    padding-left: 1%;
 }
 
 .task{
@@ -66,7 +86,35 @@ input[type="text"]{
     font-size: 0.8em;
 }
 
-h2{
-    text-align: center;
-    margin-bottom: 0;
+.fake {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    min-height: 125px;
+    padding: 3%;
+    background-color: rgba(255,255,255, 0.2);
+    margin: 3%;
+    color: var(--color-back);
+    border: 1px dashed black;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 567px) {
+    
+    .table-container {
+            flex-direction: column;
+            height: 100vh;
+    }
+
+    .black-field {
+        padding: 24px;
+        width: 300px;
+    }
+
+    .fake {
+        display: none;
+    }
+
 }
