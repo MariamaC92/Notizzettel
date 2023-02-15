@@ -61,7 +61,7 @@ input[type="text"]{
     padding: 2%;
 }
 
-.exampleTask{
+.exampleTask, .newTask{
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr;
     padding: 5% 0% 5% 0%;
@@ -83,7 +83,19 @@ input[type="text"]{
     padding: 4% 0% 4% 0%;
     color: var(--color-font);
     border-bottom: 1px solid var(--color-font);
-    font-size: 0.8em;
+    font-size: 0.9em;
+}
+
+.task i{
+    cursor: pointer;
+}
+
+.taskchecked{
+    padding: 4% 0% 4% 0%;
+    color: var(--color-font);
+    /* border-bottom: 1px solid var(--color-font); */
+    font-size: 0.9em;
+    opacity: 0.3;
 }
 
 .fake {

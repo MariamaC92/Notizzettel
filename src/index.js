@@ -24,14 +24,50 @@ function addNewToDo2 (event){
 
     let task = document.getElementById("newTask2");
 
-    //create new div
+    //create new div for a new Task
     let newDiv = document.createElement("div");
-    newDiv.classList.add("task");
-    newDiv.setAttribute("id", task.value);  // Sonderzeichen? UTF-8?
-    newDiv.innerText = task.value;  
+    newDiv.classList.add("newTask");
+    newDiv.setAttribute("id", task.value); // Sonderzeichen? UTF-8?
     document.getElementById("black-field2").appendChild(newDiv);
-    // now we need to create the 3 divs for
     
+    //create element with text
+    let newText = document.createElement("div");
+    newText.classList.add("task");
+    newText.setAttribute("id", `description-${task.value}`);
+    newText.innerText = task.value;
+    newDiv.appendChild(newText);
+    
+
+    //create the three icons:
+    //delete icon
+    let newDeleteIconSpan = document.createElement("span");
+    newDeleteIconSpan.classList.add("task");
+    newDeleteIconSpan.setAttribute("id", "delete");
+    newDiv.appendChild(newDeleteIconSpan);
+
+    let newDeleteIcon = document.createElement("i");
+    newDeleteIcon.classList.add("fa-sharp", "fa-solid", "fa-xmark");
+    newDeleteIconSpan.appendChild(newDeleteIcon);
+
+    //edit icon
+    let newEditIconSpan = document.createElement("span");
+    newEditIconSpan.classList.add("task");
+    newEditIconSpan.setAttribute("id", "edit");
+    newDiv.appendChild(newEditIconSpan);
+  
+    let newEditIcon = document.createElement("i");
+    newEditIcon.classList.add("fa-sharp", "fa-solid", "fa-pen");
+    newEditIconSpan.appendChild(newEditIcon);
+
+    //check icon
+    let newCheckIconSpan = document.createElement("span");
+    newCheckIconSpan.classList.add("task");
+    newCheckIconSpan.setAttribute("id", "check");
+    newDiv.appendChild(newCheckIconSpan);
+        
+    let newCheckIcon = document.createElement("i");
+    newCheckIcon.classList.add("fa-sharp", "fa-solid", "fa-check");
+    newCheckIconSpan.appendChild(newCheckIcon);
     task.value = "";
 };
 
@@ -40,16 +76,61 @@ form2.addEventListener('submit', addNewToDo2);
 
 
 
-
-
-/////// checkbox
+/////// delete a task
 const iconX = document.getElementById("delete");
-
-
-
 
 function deleteTask(event){
     event.preventDefault();
-    console.log(iconX.parentElement);
-}
+    let parent = document.getElementById(iconX.parentElement.id);  
+    parent.remove();
+};
 
+iconX.addEventListener('click', deleteTask);
+
+////// edit a task
+const iconEdit = document.getElementById("edit");
+
+function editTask(event){
+event.preventDefault();
+let parent = document.getElementById(iconEdit.parentElement.id);  
+
+let textId = `description-${iconEdit.parentElement.id}`;
+console.log(textId);
+
+// try to create an input field for editing the text
+//document.getElementById(textId).innerText = "";
+let tempInput = document.createElement("input");
+tempInput.type = "text";
+tempInput.placeholder = "rename your task";
+tempInput.setAttribute("id", "renameTask");
+parent.appendChild(tempInput);
+};
+
+iconEdit.addEventListener('click', editTask);
+
+//////  check that it's done
+const iconCheck = document.getElementById("check");
+
+function checkTask(event){
+    event.preventDefault();
+    let parent = document.getElementById(iconX.parentElement.id);  
+    parent.classList.toggle("taskchecked");
+    };
+
+iconCheck.addEventListener('click', checkTask);
+
+//// if task is edited, replace old text with new task description
+const editedText = document.getElementById("renameTask");
+
+function editTaskText(event){
+    event.preventDefault();
+    //create element with text
+    let newText = document.createElement("div");
+    newText.classList.add("task");
+    newText.setAttribute("id", `description-${task.value}`);
+    newText.innerText = editedText.value;
+    newDiv.appendChild(newText);
+  //BAustelle: not done yet!!!
+};
+
+editedText.addEventListener('submit', editTaskText);
