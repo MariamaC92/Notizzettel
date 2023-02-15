@@ -13,19 +13,20 @@
 
     <div id="logo"></div>
 
-
+<!-- 
+<h2>This HTML-Element is a table:</h2>
      <section class="table-container">
-        <div id="black-field1" class ="black-field">
+        <div id="black-field1" class ="black-field">-->
 
             <!--input field-->
-             <div id="table-head">
+            <!-- <div id="table-head">
                 <form id="form" action="">
                     <input id="task" type="text" placeholder="Neue Aufgabe">
                     <button id="addTaskButton" type="submit">Hinzufügen</button>
                 </form>
             </div> 
 
-             <table id="table">
+            <table id="table">
 
                 <tr class="exampleTask"> 
                     <td class="example">z.B. Putzen</td>
@@ -36,30 +37,34 @@
 
             </table>
         </div>
-    </section>
+    </section> -->
 
 
     <!-- %%%%%%%%%%% tHIS IS A DIFFERNT ATTEMPT USING A DIV INSTEAD OF A TABLE!!!!-->
+    <h2>This HTML-Element is a div:</h2>
     <section class="table-container">
     <div id="black-field2" class ="black-field">
 
             <div id="table-head2">
+
                 <form id="form2" action="">
                     <input id="newTask2" type="text" placeholder="Neue Aufgabe">
                     <button id="newToDoButton2">Hinzufügen</button>
                 </form>
+
             </div>
 
             <div class="exampleTask">
                 <div class="example">z.B. Einkaufen</div>
-                <div class="example">X</div>
+                <div class="example">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                    <input id = "delete" type="checkbox" unchecked>
+                </div>
                 <div class="example">edit</div>
                 <div class="example">check</div>
             </div>
-
-            
-
     </div>
+
 </section>
     <!--JS:  createElement(toDo2)-->
 
