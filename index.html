@@ -13,59 +13,62 @@
 
     <div id="logo"></div>
 
-
-    <section id="table-container">
-        <div id="black-field">
+<!-- 
+<h2>This HTML-Element is a table:</h2>
+     <section class="table-container">
+        <div id="black-field1" class ="black-field">-->
 
             <!--input field-->
-            <div id="table-head">
-                <form action="">
-                    <input type="text" placeholder="Neue Aufgabe">
-                    <button>Hinzufügen</button>
+            <!-- <div id="table-head">
+                <form id="form" action="">
+                    <input id="task" type="text" placeholder="Neue Aufgabe">
+                    <button id="addTaskButton" type="submit">Hinzufügen</button>
                 </form>
-            </div>
+            </div> 
 
-            <table>
+            <table id="table">
 
-                <tr class="toDo">  <!--JS:  insertRow(table)  is supposed to insert a tr-->
-                    
-                    <td id="newTask">Putzen</td>
-
-                    <td class="delete-icon">X
-                        <!--add delete-X-icon-->
-                        <!--add selector field-->
-                    </td>
-
-                    <td class="edit">edit
-                        <!--add edit-pen-icon-->
-                        <!--add selector field-->
-                    </td>
-
-                    <td class="done">done
-                        <!--add edit-pen-icon-->
-                        <!--add selector field-->
-                    </td>
+                <tr class="exampleTask"> 
+                    <td class="example">z.B. Putzen</td>
+                    <td class="example">X</td>
+                    <td class="example">edit</td>
+                    <td class="example">done</td>
                 </tr>
 
             </table>
         </div>
-    </section>
+    </section> -->
 
 
+    <!-- %%%%%%%%%%% tHIS IS A DIFFERNT ATTEMPT USING A DIV INSTEAD OF A TABLE!!!!-->
+    <h2>This HTML-Element is a div:</h2>
+    <section class="table-container">
+    <div id="black-field2" class ="black-field">
 
-    
+            <div id="table-head2">
 
-    <!-- <div>
-        <div class="toDo2">
-            <div class="row">neue Aufgabe</div>
-            <img src="" alt="delete_icon">
-            <img src="" alt="edit_icon">
-            <img src="" alt="done_icon">
-        </div>
-    </div> -->
+                <form id="form2" action="">
+                    <input id="newTask2" type="text" placeholder="Neue Aufgabe">
+                    <button id="newToDoButton2">Hinzufügen</button>
+                </form>
+
+            </div>
+
+            <div class="exampleTask">
+                <div class="example">z.B. Einkaufen</div>
+                <div class="example">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                    <input id = "delete" type="checkbox" unchecked>
+                </div>
+                <div class="example">edit</div>
+                <div class="example">check</div>
+            </div>
+    </div>
+
+</section>
     <!--JS:  createElement(toDo2)-->
 
-
+    <script src="./src/index.js"></script>
 </body>
 
 </html>

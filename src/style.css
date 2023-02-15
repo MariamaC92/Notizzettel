@@ -5,11 +5,11 @@ list-style: none;
 }
 
 :root {
-    --color-back: rgb(0, 0, 0);
+    --color-back: black;
     --color-font: white;
 }
 
-#table-container {
+.table-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,37 +17,56 @@ list-style: none;
     height: 100vh;
 }
 
+.black-field{
+    background-color: var(--color-back);
+    color: var(--color-font);
+    padding: 2%;
+    border-radius: 5px;
+    height: 60vh;
+    width: 250px;
+ }
+
 table {
-    width: 30%;
+    display: table;
+    width: 100%;
     border-radius: 5px;
     padding: 3%;
 }
 
 td{
     vertical-align: top;
-}
-
- table .toDo{
     border-bottom: 1px solid var(--color-font);
+    padding: padding: 5% 0% 5% 0%;
 }
-
-#black-field{
-   background-color: var(--color-back);
-   color: var(--color-font);
-   padding: 2%;
-   border-radius: 5px;
-   height: 60vh;
-};
 
 input[type="text"]{
     background: var(--color-back);
-};
+    color: var(--color-font);
+    padding: 2%;
+}
 
+.exampleTask{
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr 1fr;
+  padding: 5% 0% 5% 0%;
+  font-size: 0.9em;
+  opacity: 0.5;
+}
 
+.example {
+    color: var(--color-font);
+    font-size: 0.8em;
+    opacity: 0.5;
+}
 
+.task{
+    padding: 4% 0% 4% 0%;
+    color: var(--color-font);
+    border-bottom: 1px solid var(--color-font);
+    font-size: 0.8em;
+}
 
-
-/* .toDo2 {
-    display: grid;
-    grid-template-columns: 4fr 1fr 1fr 1fr;
-} */
+h2{
+    text-align: center;
+    margin-bottom: 0;
+}
