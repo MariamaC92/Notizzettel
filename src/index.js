@@ -81,8 +81,7 @@ const iconX = document.getElementById("delete");
 
 function deleteTask(event){
     event.preventDefault();
-    let parent = document.getElementById(iconX.parentElement.id);  
-    parent.remove();
+    document.getElementById(iconX.parentElement.id).remove();  
 };
 
 iconX.addEventListener('click', deleteTask);
@@ -98,10 +97,10 @@ let parent = document.getElementById(iconEdit.parentElement.id);
 let textId = `description-${iconEdit.parentElement.id}`;
 let textItem = document.getElementById(textId);
 
-if (textItem.hasAttribute("readonly")){
-    textItem.removeAttribute("readonly");
+if (textItem.hasAttribute('disabled')){
+    textItem.removeAttribute('disabled');
 } else {
-    (textItem.readOnly = 'true');
+    (textItem.disabled= 'true');
 };
 };
 

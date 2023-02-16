@@ -37,7 +37,7 @@ body {
     color: var(--color-font);
     padding: 2%;
     border-radius: 5px;
-    width: 250px;
+    width: 300px;
     min-height: 250px;
  }
 
@@ -104,6 +104,12 @@ input[type="text"]{
  border: none;
 }
 
+/* Layout, wenn das inut-feld nicht bearbeitet werden soll */
+.description :focus, .description :active {
+    border: none;
+}
+
+/* Layout, wenn das inut-feld bearbeitet wird und aktiviert wird */
 .description :focus, .description :active {
     border: 1px solid darkgrey;
 }
