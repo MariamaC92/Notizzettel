@@ -31,10 +31,10 @@ function addNewToDo2 (event){
     document.getElementById("black-field2").appendChild(newDiv);
     
     //create element with text
-    let newText = document.createElement("div");
-    newText.classList.add("task");
+    let newText = document.createElement("input");
+    newText.classList.add("description");
     newText.setAttribute("id", `description-${task.value}`);
-    newText.innerText = task.value;
+    newText.value = task.value;
     newDiv.appendChild(newText);
     
 
@@ -91,19 +91,18 @@ iconX.addEventListener('click', deleteTask);
 const iconEdit = document.getElementById("edit");
 
 function editTask(event){
+
 event.preventDefault();
 let parent = document.getElementById(iconEdit.parentElement.id);  
 
 let textId = `description-${iconEdit.parentElement.id}`;
-console.log(textId);
+let textItem = document.getElementById(textId);
 
-// try to create an input field for editing the text
-//document.getElementById(textId).innerText = "";
-let tempInput = document.createElement("input");
-tempInput.type = "text";
-tempInput.placeholder = "rename your task";
-tempInput.setAttribute("id", "renameTask");
-parent.appendChild(tempInput);
+if (textItem.hasAttribute("readonly")){
+    textItem.removeAttribute("readonly");
+} else {
+    (textItem.readOnly = 'true');
+};
 };
 
 iconEdit.addEventListener('click', editTask);
@@ -118,19 +117,3 @@ function checkTask(event){
     };
 
 iconCheck.addEventListener('click', checkTask);
-
-//// if task is edited, replace old text with new task description
-const editedText = document.getElementById("renameTask");
-
-function editTaskText(event){
-    event.preventDefault();
-    //create element with text
-    let newText = document.createElement("div");
-    newText.classList.add("task");
-    newText.setAttribute("id", `description-${task.value}`);
-    newText.innerText = editedText.value;
-    newDiv.appendChild(newText);
-  //BAustelle: not done yet!!!
-};
-
-editedText.addEventListener('submit', editTaskText);

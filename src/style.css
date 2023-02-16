@@ -98,6 +98,16 @@ input[type="text"]{
     opacity: 0.3;
 }
 
+.description{
+ background-color: var(--color-back);
+ color: var(--color-font);
+ border: none;
+}
+
+.description :focus, .description :active {
+    border: 1px solid darkgrey;
+}
+
 .fake {
     display: flex;
     flex-wrap: wrap;
