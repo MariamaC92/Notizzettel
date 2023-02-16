@@ -16,34 +16,6 @@
         <img src="img/logo.png" width="150" alt="">
     </div>
 
-<!-- 
-<h2>This HTML-Element is a table:</h2>
-     <section class="table-container">
-        <div id="black-field1" class ="black-field">-->
-
-            <!--input field-->
-            <!-- <div id="table-head">
-                <form id="form" action="">
-                    <input id="task" type="text" placeholder="Neue Aufgabe">
-                    <button id="addTaskButton" type="submit">Hinzufügen</button>
-                </form>
-            </div> 
-
-            <table id="table">
-
-                <tr class="exampleTask"> 
-                    <td class="example">z.B. Putzen</td>
-                    <td class="example">X</td>
-                    <td class="example">edit</td>
-                    <td class="example">done</td>
-                </tr>
-
-            </table>
-        </div>
-    </section> -->
-
-
-    <!-- %%%%%%%%%%% tHIS IS A DIFFERNT ATTEMPT USING A DIV INSTEAD OF A TABLE!!!!-->
     <section class="table-container">
     <div id="black-field2" class ="black-field">
 
@@ -77,15 +49,15 @@
             <div id="Aufgabe" class="newTask">
                 <input id="description-Aufgabe" class="description" disabled>
                 
-                <span id="delete" class="task">
+                <span id="delete" class="task" onclick ="deleteTask(event)">
                     <i class="fa-sharp fa-solid fa-xmark"></i>
                 </span>
 
-                <span id="edit" class="task">
+                <span id="edit" class="task" onclick ="editTask(event)">
                     <i class="fa-sharp fa-solid fa-pen"></i>
                 </span>
 
-                <span id="check" class="task">
+                <span id="check" class="task" onclick ="checkTask(event)">
                     <i class="fa-sharp fa-solid fa-check"></i>   
                 </span>
             </div>
