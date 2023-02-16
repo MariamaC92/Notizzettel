@@ -1,7 +1,8 @@
 
+localStorage.clear();
+
 function addNewToDo2 (event){
     event.preventDefault();
-    console.log(localStorage);
    
     let task = document.getElementById("newTask2");
 
@@ -12,7 +13,7 @@ function addNewToDo2 (event){
     //create new div for a new Task
     let newDiv = document.createElement("div");
     newDiv.classList.add("newTask");
-    newDiv.setAttribute("id", task.value); // Sonderzeichen? UTF-8?
+    newDiv.setAttribute("id", `${task.value}-${localStorage.length-1}`); // Sonderzeichen? UTF-8?
     document.getElementById("black-field2").appendChild(newDiv);
     
     //create element with text
@@ -70,7 +71,11 @@ form2.addEventListener('submit', addNewToDo2);
 /////// delete a task
 function deleteTask(event){
     event.preventDefault();
-    event.currentTarget.parentElement.remove();  
+    let parent = event.currentTarget.parentElement;
+    expression = /[0-9]$/;  
+    let storageIndex = parent.id.match(expression);
+    localStorage.removeItem(storageIndex);
+    parent.remove();   
 };
 
 ////// edit a task
@@ -79,14 +84,12 @@ function editTask(event){
 event.preventDefault();
 let parent = event.currentTarget.parentElement;  
 
-let textId = `description-${parent.id}`;
-let textItem = document.getElementById(textId);
-
+let textItem = parent.firstChild;
 if (textItem.hasAttribute('disabled')){
     textItem.removeAttribute('disabled');
 } else {
     (textItem.disabled= 'true');
-};
+ };
 };
 
 //////  check that it's done
