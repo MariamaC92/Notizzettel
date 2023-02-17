@@ -1,9 +1,7 @@
 
 localStorage.clear();
 
-
 function createIconElement(type, icon, parent){
-    console.log(parent);
     
     let newIconSpan = document.createElement("span");
     newIconSpan.classList.add("task");
@@ -16,7 +14,6 @@ function createIconElement(type, icon, parent){
     newIconSpan.appendChild(newIcon);
     return;
 };
-
 
 function addNewToDo2 (event){
     event.preventDefault();
@@ -43,6 +40,8 @@ function addNewToDo2 (event){
     createIconElement("edit", "fa-pen", newDiv);
     createIconElement("check", "fa-check" , newDiv);
     task.value = "";
+
+    document.getElementById("exampleTask").style.visibility = 'hidden';
 };
 
 const form2 = document.getElementById("form2");
@@ -56,6 +55,10 @@ function deleteTask(event){
     let storageIndex = parent.id.match(expression);
     localStorage.removeItem(storageIndex);
     parent.remove();   
+
+    if (localStorage.length === 0){
+        document.getElementById("exampleTask").style.visibility = 'visible';
+    }
 };
 
 ////// edit a task
@@ -67,9 +70,11 @@ let parent = event.currentTarget.parentElement;
 let textItem = parent.firstChild;
 if (textItem.hasAttribute('disabled')){
     textItem.removeAttribute('disabled');
+    textItem.focus();
 } else {
     (textItem.disabled= 'true');
  };
+//  textItem.onsubmit = replaceEditedTask(event);
 };
 
 //////  check that it's done
@@ -78,3 +83,9 @@ function checkTask(event){
     event.currentTarget.parentElement.classList.toggle("taskchecked"); 
     };
 
+
+///////////
+// function replaceEditedTask(event){
+//         event.preventDefault();
+//         event.currentTarget.disabled= 'true';
+// }
