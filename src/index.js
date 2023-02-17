@@ -1,7 +1,6 @@
 
 localStorage.clear();
 
-
 function createIconElement(type, icon, parent){
     console.log(parent);
     
@@ -16,7 +15,6 @@ function createIconElement(type, icon, parent){
     newIconSpan.appendChild(newIcon);
     return;
 };
-
 
 function addNewToDo2 (event){
     event.preventDefault();
@@ -43,6 +41,8 @@ function addNewToDo2 (event){
     createIconElement("edit", "fa-pen", newDiv);
     createIconElement("check", "fa-check" , newDiv);
     task.value = "";
+
+    document.getElementById("exampleTask").style.visibility = 'hidden';
 };
 
 const form2 = document.getElementById("form2");
@@ -56,6 +56,10 @@ function deleteTask(event){
     let storageIndex = parent.id.match(expression);
     localStorage.removeItem(storageIndex);
     parent.remove();   
+
+    if (localStorage.length === 0){
+        document.getElementById("exampleTask").style.visibility = 'visible';
+    }
 };
 
 ////// edit a task

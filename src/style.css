@@ -123,7 +123,7 @@ input[type="text"]{
     padding: 2%;
 }
 
-.exampleTask, .newTask{
+#exampleTask, .newTask{
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr;
     padding: 5% 0% 5% 0%;
