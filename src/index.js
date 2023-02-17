@@ -37,7 +37,7 @@ function addNewToDo2 (event){
     newDiv.appendChild(newText);
     
     createIconElement("delete", "fa-xmark", newDiv);
-    createIconElement("edit", "fa-pen", newDiv);
+    createIconElement("edit", "fa-pen-to-square", newDiv);
     createIconElement("check", "fa-check" , newDiv);
     task.value = "";
 
